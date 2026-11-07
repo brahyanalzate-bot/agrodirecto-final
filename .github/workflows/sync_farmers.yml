@@ -1,0 +1,24 @@
+﻿name: Weekly Farmer Sync
+on:
+  schedule:
+    - cron: '0 0 * * 1' # Todos los lunes a medianoche
+  workflow_dispatch: # Ejecución manual
+
+jobs:
+  sync_data:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          pip install requests supabase python-dotenv
+      - name: Run Ingestion Script
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          SODA_API_URL: ${{ secrets.SODA_API_URL }}
+        run: python scripts/data_ingestion/main.py

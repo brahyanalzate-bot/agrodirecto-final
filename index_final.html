@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrodirecto - MVP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Public+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg-light: oklch(97% 0.02 90);
+            --color-surface-light: oklch(93% 0.03 90);
+            --color-accent: oklch(65% 0.15 145);
+            --color-secondary: oklch(55% 0.12 45);
+            --color-text-//light: oklch(25% 0.03 260);
+        }
+        body { 
+            font-family: 'Public Sans', sans-serif; 
+            background-color: var(--color-bg-light); 
+            color: var(--color-text-//light);
+        }
+        h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+        .btn-agro { 
+            background-color: var(--color-accent); 
+            color: white; 
+            padding: 1rem 2rem; 
+            border-radius: 8px; 
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .btn-agro:hover { filter: brightness(1.1); transform: translateY(-1px); }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div id="app" class="p-6 max-w-md mx-auto">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl font-bold text-brand-accent mb-2">Agrodirecto</h1>
+            <p class="text-gray-600">Justicia Económica para el Campo</p>
+        </header>
+
+        <div class="bg-white p-6 rounded-agro shadow-sm border border-gray-100 mb-6">
+            <h2 class="text-xl font-semibold mb-4">Bienvenido al MVP</h2>
+            <p class="mb-6 text-gray-600">Este es el prototipo funcional. Puedes navegar entre los roles de Productor, Comprador y Logística.</p>
+            
+            <div class="flex flex-col gap-3">
+                <button onclick="alert('Módulo Productor Cargando...')" class="btn-agro">Soy Productor</button>
+                <button onclick="alert('Módulo Comprador Cargando...')" class="btn-agro" style="background-color: var(--color-secondary)">Soy Comprador</button>
+                <button onclick="alert('Módulo Logística Cargando...')" class="btn-agro" style="background-color: #666">Soy Transportista</button>
+            </div>
+        </div>
+
+        <footer class="text-center text-xs text-gray-400 mt-10">
+            © 2026 Agrodirecto - Construido con Rigor Técnico
+        </footer>
+    </div>
+</body>
+</html>

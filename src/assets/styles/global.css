@@ -1,0 +1,23 @@
+﻿:root {
+  --color-bg-light: oklch(97% 0.02 90);
+  --color-surface-light: oklch(93% 0.03 90);
+  --color-accent: oklch(65% 0.15 145);
+  --color-secondary: oklch(55% 0.12 45);
+  --color-text-light: oklch(30% 0.04 145);
+  --color-text-muted-light: oklch(50% 0.04 145);
+  --color-bg-dark: oklch(25% 0.04 145);
+  --color-surface-dark: oklch(30% 0.04 145);
+  --color-text-dark: oklch(95% 0.02 90);
+  --color-text-muted-dark: oklch(80% 0.02 90);
+}
+body {
+  font-family: 'Public Sans', sans-serif;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+}
+.dark body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+.btn-agro { background-color: var(--color-accent); color: white; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; }
